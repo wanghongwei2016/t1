@@ -71,10 +71,10 @@ export function UploadArea({
               variants: [avatar_url],
             },
           }: { result: { variants: [string] } } = await response.json()
-          startTransition(async () => {
+          // startTransition(async () => {
             updateUser({ ...user, avatar_url })
             onFinish()
-          })
+          // })
         } finally {
           setLoading(false)
         }
