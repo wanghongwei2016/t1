@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.logo {
+  background: linear-gradient(
+    48.971203064037795deg,
+    #e782d7 0%,
+    #e157f3 56%,
+    #ad4cd8 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.active-link {
+  background: linear-gradient(
+    52.85144975230191deg,
+    #cd50c8 0%,
+    #f2a5ff 50%,
+    #ad4cd8 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.search,
+.load-more {
+  background: linear-gradient(118deg, #d79fff 0%, #ed4bf7 100%);
+}
+
+.info-name {
+  background: linear-gradient(157deg, #cc81f2 0%, #9d4ae0 100%);
+}
+
+.user-message {
+  background: linear-gradient(155deg, #9d4ae0 0%, #e151be 100%);
+}
+
+.active-session {
+  position: relative; /* Ensure the parent element is positioned */
+  z-index: 1; /* Ensure the text is above the background */
+}
+
+.active-session::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    #a649ce 0%,
+    rgba(116, 84, 211, 0.73) 27%,
+    rgba(229, 113, 226, 0) 100%
+  );
+  border-radius: 15px;
+  opacity: 0.58;
+  z-index: -1; /* Ensure the background is below the text */
+}
+
+.user-avatar {
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 220, 142, 1),
+    rgba(255, 147, 47, 1)
+  );
+  background-clip: content-box, border-box;
+  -webkit-background-clip: content-box, border-box;
+}
+
+.hm:hover {
+  cursor: pointer;
+}
+
+@import "./flex.css";

@@ -1,0 +1,416 @@
+.f {
+  display: flex;
+}
+
+.fx {
+  flex-direction: row;
+}
+
+.fx.fr {
+  flex-direction: row-reverse;
+}
+
+.fy {
+  flex-direction: column;
+}
+
+.fy.fr {
+  flex-direction: column-reverse;
+}
+
+.f-1 {
+  flex-grow: 1;
+}
+
+.fx > .f-1 {
+  width: 0;
+}
+
+.fy > .f-1 {
+  height: 0;
+}
+
+.f-2 {
+  flex-grow: 2;
+}
+
+.fx > .f-2 {
+  width: 0;
+}
+
+.fy > .f-2 {
+  height: 0;
+}
+
+.f-3 {
+  flex-grow: 3;
+}
+
+.fx > .f-3 {
+  width: 0;
+}
+
+.fy > .f-3 {
+  height: 0;
+}
+
+.f-4 {
+  flex-grow: 4;
+}
+
+.fx > .f-4 {
+  width: 0;
+}
+
+.fy > .f-4 {
+  height: 0;
+}
+
+.f-5 {
+  flex-grow: 5;
+}
+
+.fx > .f-5 {
+  width: 0;
+}
+
+.fy > .f-5 {
+  height: 0;
+}
+
+.f-6 {
+  flex-grow: 6;
+}
+
+.fx > .f-6 {
+  width: 0;
+}
+
+.fy > .f-6 {
+  height: 0;
+}
+
+.f-7 {
+  flex-grow: 7;
+}
+
+.fx > .f-7 {
+  width: 0;
+}
+
+.fy > .f-7 {
+  height: 0;
+}
+
+.f-8 {
+  flex-grow: 8;
+}
+
+.fx > .f-8 {
+  width: 0;
+}
+
+.fy > .f-8 {
+  height: 0;
+}
+
+.f-9 {
+  flex-grow: 9;
+}
+
+.fx > .f-9 {
+  width: 0;
+}
+
+.fy > .f-9 {
+  height: 0;
+}
+
+.f-10 {
+  flex-grow: 10;
+}
+
+.fx > .f-10 {
+  width: 0;
+}
+
+.fy > .f-10 {
+  height: 0;
+}
+
+.f-11 {
+  flex-grow: 11;
+}
+
+.fx > .f-11 {
+  width: 0;
+}
+
+.fy > .f-11 {
+  height: 0;
+}
+
+.f-12 {
+  flex-grow: 12;
+}
+
+.fx > .f-12 {
+  width: 0;
+}
+
+.fy > .f-12 {
+  height: 0;
+}
+
+.fcc {
+  align-items: center;
+}
+
+.fcb {
+  align-items: baseline;
+}
+
+.fcd {
+  align-items: stretch;
+}
+
+.fcs {
+  align-items: start;
+}
+
+.fce {
+  align-items: end;
+}
+
+.fmc {
+  justify-content: center;
+}
+
+.fmb {
+  justify-content: space-between;
+}
+
+.fma {
+  justify-content: space-around;
+}
+
+.fms {
+  justify-content: flex-start;
+}
+
+.fme {
+  justify-content: flex-end;
+}
+
+.f0 {
+  font-size: 0px;
+}
+
+.f8 {
+  font-size: 8px;
+}
+
+.f10 {
+  font-size: 10px;
+}
+
+.f12 {
+  font-size: 12px;
+}
+
+.f14 {
+  font-size: 14px;
+}
+
+.f16 {
+  font-size: 16px;
+}
+
+.f18 {
+  font-size: 18px;
+}
+
+.f20 {
+  font-size: 20px;
+}
+
+.f22 {
+  font-size: 22px;
+}
+
+.f24 {
+  font-size: 24px;
+}
+
+.f26 {
+  font-size: 26px;
+}
+
+.f28 {
+  font-size: 28px;
+}
+
+.f30 {
+  font-size: 30px;
+}
+
+.f32 {
+  font-size: 32px;
+}
+
+.f34 {
+  font-size: 34px;
+}
+
+.f36 {
+  font-size: 36px;
+}
+
+.f38 {
+  font-size: 38px;
+}
+
+.f40 {
+  font-size: 40px;
+}
+
+.f42 {
+  font-size: 42px;
+}
+
+.f44 {
+  font-size: 44px;
+}
+
+.f46 {
+  font-size: 46px;
+}
+
+.f48 {
+  font-size: 48px;
+}
+
+.f50 {
+  font-size: 50px;
+}
+
+.hover-container .hover-popover {
+  display: none;
+}
+
+.hover-container:hover .hover-popover,
+.hover-popover:hover {
+  display: block !important;
+}
+
+.border {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.border-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.border-left {
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.border-radius {
+  border-radius: 1em;
+}
+
+.text-primary {
+  color: #ea55f8;
+}
+
+.roll {
+  position: relative;
+  display: block;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+
+.roll::-webkit-scrollbar {
+  display: none;
+}
+
+.roll .roll-item {
+  position: relative;
+  display: inline-block;
+}
+
+.blog-main {
+  font-size: 32px;
+}
+
+.blog-main p {
+  margin: 10px 20px;
+}
+
+.blog-main img {
+  max-width: 500px;
+  max-height: 600px;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #1a1a1a;
+  border-radius: 3px;
+}
+
+.btn {
+  overflow: hidden;
+  cursor: pointer;
+  background: linear-gradient(155deg, #9d4ae0 0%, #e151be 100%);
+}
+
+.input-none {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  outline: none;
+}
+
+.br {
+  border-radius: 15px;
+}
+
+.br-sm {
+  border-radius: 5px;
+}
+
+.br-lg {
+  border-radius: 20px;
+}
+
+.br-full {
+  border-radius: 100%;
+}
+
+.oh {
+  overflow: hidden;
+}
+
+.oya {
+  overflow-y: auto;
+}
+
+.bg-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.dialog {
+  max-width: 90%;
+}
+
+.bg {
+  background: linear-gradient(155deg, #9d4ae0 0%, #e151be 100%);
+}
