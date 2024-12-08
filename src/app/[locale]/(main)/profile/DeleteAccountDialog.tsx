@@ -34,11 +34,11 @@ export default function DeleteAccountDialog({
         <div className="mt-[50px] text-2xl">{tt("content")}</div>
         <Button
           className="mt-[85px] h-[90px] rounded-3xl bg-[#C62D2D] text-3xl leading-[90px]"
-          onClick={() => {
-            startTransition(async () => {
-              await request("/user/requestAccountDeletion")
-              router.replace("/signout")
-            })
+          onClick={async () => {
+            // startTransition(async () => {
+            await request("/user/requestAccountDeletion")
+            router.replace("/signout")
+            // })
           }}
         >
           {isPending && <Loader2 className="mr-2 h-10 w-10 animate-spin" />}
