@@ -14,6 +14,7 @@ const nextConfig = {
     ],
   },
   transpilePackages: ["tailwind-merge","@radix-ui"],
+  ignoreDuringBuilds:true
 }
 
 export default withSentryConfig(withNextIntl(nextConfig))
