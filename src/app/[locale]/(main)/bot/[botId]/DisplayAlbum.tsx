@@ -21,14 +21,14 @@ function useLike(
   const toggle = useSigninConfirmStore((state) => state.toggle)
   const like = async () => {
     if (user) {
-      startTransition(async () => {
+      // startTransition(async () => {
         await likePhoto(botId, album.id)
         const nextIsLiked = !isLiked
         setIsLiked(nextIsLiked)
         const nextLikeNumber = Math.max(0, likeNumber + (isLiked ? -1 : 1))
         setLikeNumber(nextLikeNumber)
         update(nextIsLiked, nextLikeNumber)
-      })
+      // })
     } else {
       toggle()
     }
