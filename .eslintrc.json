@@ -2,7 +2,6 @@
   "extends": "next/core-web-vitals",
   "rules": {
     "no-unused-vars": "warn",
-    "eqeqv": "warn",
     "indent": "off",
     "quotes": "off",
     "semicolon": "off"
