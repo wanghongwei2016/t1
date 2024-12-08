@@ -122,11 +122,11 @@ function LogoffDialog({ close }: { close: Function }) {
         <div
           className="oh br-lg f fx fcc fmc relative mb-4 mt-4 bg-[#C62D2D] text-white"
           style={{ height: "50px" }}
-          onClick={() => {
-            startTransition(async () => {
+          onClick={async() => {
+            // startTransition(async () => {
               await request("/user/requestAccountDeletion")
               router.replace("/signout")
-            })
+            // })
           }}
         >
           {t("space_07")}

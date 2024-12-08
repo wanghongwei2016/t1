@@ -14,11 +14,11 @@ export default function useLike(bot: Bot) {
   const toggle = useSigninConfirmStore((state) => state.toggle)
   const like = async (user_id: number) => {
     if (user) {
-      startTransition(async () => {
+      // startTransition(async () => {
         await likeBot(user_id)
         setIsLiked(!isLiked)
         setLikeNumber(likeNumber + (isLiked ? -1 : 1))
-      })
+      // })
     } else {
       toggle()
     }

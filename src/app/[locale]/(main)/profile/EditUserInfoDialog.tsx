@@ -40,10 +40,10 @@ export default function EditUserInfoDialog({
               const username = (
                 form.elements.namedItem("username") as HTMLInputElement
               ).value
-              startTransition(async () => {
+              // startTransition(async () => {
                 await updateUser({ ...user, username })
                 setOpen(false)
-              })
+              // })
             } catch (error) {
             } finally {
               setLoading(false)
