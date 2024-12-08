@@ -1,14 +1,3 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint"
-  ],
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "rules": {
-    // 比如关闭对特定类型错误的检查
-    "@typescript-eslint/no-unused-vars": "off"
-  }
+  "extends": "next/core-web-vitals"
 }
