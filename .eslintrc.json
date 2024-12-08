@@ -1,9 +1,14 @@
 {
-  "extends": "eslint:recommended",
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "rules": {
-    "no-unused-vars": "warn",
-    "indent": "off",
-    "quotes": "off",
-    "semicolon": "off"
+    // 比如关闭对特定类型错误的检查
+    "@typescript-eslint/no-unused-vars": "off"
   }
 }
