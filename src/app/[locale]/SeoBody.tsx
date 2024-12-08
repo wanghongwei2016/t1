@@ -124,5 +124,5 @@ export default async function SeoBody({ locale }: { locale: string }) {
     console.log(error)
   }
 
-  return null
+  return <div></div>
 }
