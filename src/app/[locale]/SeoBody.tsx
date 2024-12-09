@@ -4,8 +4,8 @@ import { headers } from "next/headers"
 import request from "@/server-request"
 import blogList from "@/app/[locale]/(main)/blog/blogList"
 
-export default  function SeoBody({ locale }: { locale: string }) {
-  try {
+export default async function SeoBody({ locale }: { locale: string }) {
+  // try {
     const localePath = "en" == locale ? "/" : `/${locale}`
 
     const headersList = headers()
@@ -68,61 +68,61 @@ export default  function SeoBody({ locale }: { locale: string }) {
     // }
 
     // faq
-    if (requestPath.endsWith("/faq")) {
-      const FaqPage = require(
-        `@/app/[locale]/(main)/faq/article/${locale.split("-")[0]}.tsx`
-      )
-      return (
-        <div
-          className="fixed"
-          style={{ top: "300%", left: "300%", color: "rgba(0,0,0,0)" }}
-        >
-          {FaqPage.default()}
-        </div>
-      )
-    }
+  //   if (requestPath.endsWith("/faq")) {
+  //     const FaqPage = require(
+  //       `@/app/[locale]/(main)/faq/article/${locale.split("-")[0]}.tsx`
+  //     )
+  //     return (
+  //       <div
+  //         className="fixed"
+  //         style={{ top: "300%", left: "300%", color: "rgba(0,0,0,0)" }}
+  //       >
+  //         {FaqPage.default()}
+  //       </div>
+  //     )
+  //   }
 
-    // blog
-    if (requestPath.endsWith("/blog")) {
-      return (
-        <div
-          className="fixed"
-          style={{ top: "300%", left: "300%", color: "rgba(0,0,0,0)" }}
-        >
-          {blogList.map((item, i) => (
-            <div key={i}>
-              {/* <Image src={item.image} alt={item.title} /> */}
-              <h1>{item.title}</h1>
-              <p>{item.description}</p>
-              <a
-                href={`${localePath == "/" ? localePath : localePath + "/"}blog/${item.id}`}
-              >
-                View
-              </a>
-            </div>
-          ))}
-        </div>
-      )
-    }
+  //   // blog
+  //   if (requestPath.endsWith("/blog")) {
+  //     return (
+  //       <div
+  //         className="fixed"
+  //         style={{ top: "300%", left: "300%", color: "rgba(0,0,0,0)" }}
+  //       >
+  //         {blogList.map((item, i) => (
+  //           <div key={i}>
+  //             {/* <Image src={item.image} alt={item.title} /> */}
+  //             <h1>{item.title}</h1>
+  //             <p>{item.description}</p>
+  //             <a
+  //               href={`${localePath == "/" ? localePath : localePath + "/"}blog/${item.id}`}
+  //             >
+  //               View
+  //             </a>
+  //           </div>
+  //         ))}
+  //       </div>
+  //     )
+  //   }
 
-    if (/\/blog\/\d+$/.test(requestPath)) {
-      const id = requestUrl.substring(requestUrl.lastIndexOf("/") + 1)
+  //   if (/\/blog\/\d+$/.test(requestPath)) {
+  //     const id = requestUrl.substring(requestUrl.lastIndexOf("/") + 1)
 
-      const blogPage = require(
-        `@/app/[locale]/(main)/blog/(blogs)/${id}/page.tsx`
-      )
-      return (
-        <div
-          className="fixed"
-          style={{ top: "300%", left: "300%", color: "rgba(0,0,0,0)" }}
-        >
-          {blogPage.default()}
-        </div>
-      )
-    }
-  } catch (error) {
-    console.log(error)
-  }
+  //     const blogPage = require(
+  //       `@/app/[locale]/(main)/blog/(blogs)/${id}/page.tsx`
+  //     )
+  //     return (
+  //       <div
+  //         className="fixed"
+  //         style={{ top: "300%", left: "300%", color: "rgba(0,0,0,0)" }}
+  //       >
+  //         {blogPage.default()}
+  //       </div>
+  //     )
+  //   }
+  // } catch (error) {
+  //   console.log(error)
+  // }
 
   return <div></div>
 }
