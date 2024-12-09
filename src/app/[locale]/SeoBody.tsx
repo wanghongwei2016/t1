@@ -4,7 +4,7 @@ import { headers } from "next/headers"
 import request from "@/server-request"
 import blogList from "@/app/[locale]/(main)/blog/blogList"
 
-export default async function SeoBody({ locale }: { locale: string }) {
+export default  function SeoBody({ locale }: { locale: string }) {
   try {
     const localePath = "en" == locale ? "/" : `/${locale}`
 
@@ -15,57 +15,57 @@ export default async function SeoBody({ locale }: { locale: string }) {
     console.log("requestUrl", requestUrl)
 
     // 首页
-    if (localePath == requestPath) {
-      const resp = await request("/ai/search", {
-        body: { limit: 15 },
-        headers: { "accept-language": locale },
-      })
-      return resp && resp.data && resp.data.users ? (
-        <div>
-          {resp.data.users.map((user: any) => (
-            <div
-              className="fixed"
-              style={{ top: "300%", left: "300%", color: "rgba(0,0,0,0)" }}
-              key={user.user_id}
-            >
-              <img src={user.avatar_url} alt="" />
-              <h1>{user.username}</h1>
-              {user.tags.map((tag: any) => (
-                <div key={tag}>{tag}</div>
-              ))}
-              <p>{user.description}</p>
-              <a
-                href={`${localePath == "/" ? localePath : localePath + "/"}bot/${user.user_id}`}
-              >
-                View
-              </a>
-            </div>
-          ))}
-        </div>
-      ) : null
-    }
+    // if (localePath == requestPath) {
+    //   const resp = await request("/ai/search", {
+    //     body: { limit: 15 },
+    //     headers: { "accept-language": locale },
+    //   })
+    //   return resp && resp.data && resp.data.users ? (
+    //     <div>
+    //       {resp.data.users.map((user: any) => (
+    //         <div
+    //           className="fixed"
+    //           style={{ top: "300%", left: "300%", color: "rgba(0,0,0,0)" }}
+    //           key={user.user_id}
+    //         >
+    //           <img src={user.avatar_url} alt="" />
+    //           <h1>{user.username}</h1>
+    //           {user.tags.map((tag: any) => (
+    //             <div key={tag}>{tag}</div>
+    //           ))}
+    //           <p>{user.description}</p>
+    //           <a
+    //             href={`${localePath == "/" ? localePath : localePath + "/"}bot/${user.user_id}`}
+    //           >
+    //             View
+    //           </a>
+    //         </div>
+    //       ))}
+    //     </div>
+    //   ) : null
+    // }
 
     // 机器人详情页
-    if (/\/bot\/\d+$/.test(requestPath)) {
-      const id = requestUrl.substring(requestUrl.lastIndexOf("/") + 1)
-      const resp = await request("/ai/view", {
-        body: { user_id: id },
-        headers: { "accept-language": locale },
-      })
-      return resp && resp.data && resp.data.user ? (
-        <div
-          className="fixed"
-          style={{ top: "300%", left: "300%", color: "rgba(0,0,0,0)" }}
-        >
-          <img src={resp.data.user.avatar_url} alt="" />
-          <h1>{resp.data.user.username}</h1>
-          {resp.data.user.tags.map((tag: any) => (
-            <div key={tag}>{tag}</div>
-          ))}
-          <p>{resp.data.user.description}</p>
-        </div>
-      ) : null
-    }
+    // if (/\/bot\/\d+$/.test(requestPath)) {
+    //   const id = requestUrl.substring(requestUrl.lastIndexOf("/") + 1)
+    //   const resp = await request("/ai/view", {
+    //     body: { user_id: id },
+    //     headers: { "accept-language": locale },
+    //   })
+    //   return resp && resp.data && resp.data.user ? (
+    //     <div
+    //       className="fixed"
+    //       style={{ top: "300%", left: "300%", color: "rgba(0,0,0,0)" }}
+    //     >
+    //       <img src={resp.data.user.avatar_url} alt="" />
+    //       <h1>{resp.data.user.username}</h1>
+    //       {resp.data.user.tags.map((tag: any) => (
+    //         <div key={tag}>{tag}</div>
+    //       ))}
+    //       <p>{resp.data.user.description}</p>
+    //     </div>
+    //   ) : null
+    // }
 
     // faq
     if (requestPath.endsWith("/faq")) {
